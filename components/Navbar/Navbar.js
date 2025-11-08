@@ -451,45 +451,6 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* ==================== Second Nav Bar ===================== */}
-            <div className="container mx-auto py-3 px-3 hidden lg:block">
-                <ul className="flex items-center 2xl:space-x-20 xl:space-x-12 space-x-9">
-                    {SecondLink.map((curVal) => (
-                        <li className="text-zinc-600 font-semibold hover:text-cyan-700" key={curVal.id}>
-                            <Link href={curVal.link}>
-                                {curVal.name}
-                            </Link>
-                        </li>
-                    ))}
-
-                    {/* ================ Dropdown More ================= */}
-                    {MoreLink.map((curVal) => (
-                        <li key={curVal.id} className="relative">
-                            <button 
-                                className={`font-semibold flex items-center hover:text-cyan-700 ${(moreDp === "hidden") ? "text-zinc-600" : "text-cyan-700"}`}
-                                onClick={() => (moreDp === "hidden") ? useMoreDp("") : useMoreDp("hidden")}
-                            >
-                                {curVal.name}
-                                <span className={`ml-1 transition ${(moreDp === "") ? "rotate-180" : "rotate-0"}`}> 
-                                    {curVal.icon} 
-                                </span>
-                            </button>
-
-                            {/* =========== More Dropdown List =============== */}
-                            <ul className={`${moreDp} absolute font-semibold text-md bg-[#F3FFFC] shadow-lg border rounded-sm text-zinc-700 min-w-[17rem] right-[-1rem] top-7 z-10`}>
-                                {curVal.subLink.map((curSubVal) => (
-                                    <li key={curSubVal.id} className="px-5 py-3 hover:bg-[#e1f7fa] cursor-pointer hover:text-cyan-700">
-                                        <Link href={curSubVal.link}>
-                                            {curSubVal.name}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-
             {/* ==================== Mobile Nav Bar Start ====================== */}
             <div className="lg:hidden">
                 <div className="border-b border-gray-200 block">
